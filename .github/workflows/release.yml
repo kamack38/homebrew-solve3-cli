@@ -1,0 +1,24 @@
+name: 📌 Commit new version
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The latest version'
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: ${{ github.workspace }}/build
+    steps:
+      - name: 📚 Checkout code
+        uses: actions/checkout@v2
+      - name: 🔧 Adjust Formula
+        run: ./build.ps1 -Version ${{ github.event.inputs.version }}
+      - name: 📌 Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'feat: 🎸 Brew Formula v${{ github.event.inputs.version }}'
