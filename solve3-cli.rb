@@ -5,9 +5,9 @@ class Solve3Cli < Formula
   homepage "https://github.com/kamack38/solve3-cli"
   url "https://registry.npmjs.org/solve3-cli/-/solve3-cli-1.7.2.tgz"
   head "https://github.com/kamack38/solve3-cli.git", branch: "main"
-  sha256 "ae70b4e58c6c96925376cde48adbf1479f8f3d07e8191f4e4273c9f9574c5a1b"
+  sha256 "623ccf73f8cd07a07c751763ec6250e64bb8db380e6379b832a3cc46e4a557ca"
   license "MIT"
-  version "1.7.5"
+  version "1.7.6"
 
   depends_on "openjdk@17"
   depends_on "node"
